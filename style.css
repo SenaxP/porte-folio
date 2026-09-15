@@ -1,0 +1,57 @@
+:root {
+    --btn-height: 80px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #FBF1D7;
+    padding: 40px;
+}
+
+.page-title {
+    position: absolute;
+    top: 20px;
+    left: 100px;
+    font-size: 45px;
+}
+
+.menu-bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 83%;
+    display: flex;
+    border-bottom: 6px solid #070707;
+    border-left: 6px solid #000000;
+    background: #f5eede;
+    overflow: hidden;
+    border-radius: 0 0 0 16px; /* bevel 4 valeur, 4 angle : haut-gauche  haut-droite  bas-droite  bas-gauche */
+}
+
+.menu-bar button {
+    flex: 1;
+    height: var(--btn-height);
+    padding: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #000000;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.menu-bar button:first-child {
+    border-left: none;
+}
+
+.menu-bar button:hover {
+    background: #3a3a3a;
+    color: #ffffff;
+}
