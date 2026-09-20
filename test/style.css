@@ -25,14 +25,13 @@ nav {
     display: flex; /* Alignement horizontal des elements */
     justify-content: space-between; /* Titre a gauche, boutons a droite */
     align-items: center; /* Centre verticalement */
-    gap: 12px; /* Espacement entre les elements */
     flex-wrap: wrap; /* Les elements passent a la ligne si pas assez de place */
 }
 
 /* Titre de la page actuelle (a gauche de la nav) */
 .page-title {
     color: #fff; /* Blanc pour bien ressortir */
-    font-size: 15px; /* Meme taille que les boutons */
+    font-size: 30px; /* Meme taille que les boutons */
     font-weight: 600; /* Texte un peu gras */
     letter-spacing: 0.5px; /* Leger espacement entre les lettres */
 }
@@ -82,6 +81,7 @@ nav button.active {
 
 /* Carte d'un projet (visible sur la page d'accueil) */
 .project-card {
+    min-height: 220px;
     background: #111; /* Fond tres sombre */
     border: 1px solid #1a1a1a; /* Bordure discrete */
     border-radius: 12px; /* Coins arrondis */
@@ -100,7 +100,7 @@ nav button.active {
 
 /* Zone image du projet (a gauche) */
 .card-image {
-    width: 250px; /* Largeur fixe pour l'image */
+    width: 300px; /* Largeur fixe pour l'image */
     min-height: 160px; /* Hauteur minimum */
     background: #1a1a1a; /* Fond gris tres sombre */
     display: flex;
@@ -162,8 +162,8 @@ nav button.active {
     margin-bottom: 40px; /* Espace avant le contenu */
 }
 
-/* Bouton "Retour" en haut de la page detail */
-.detail-header .back-btn {
+/* Bouton "Retour" en haut des pages detail */
+.back-btn {
     background: none; /* Pas de fond */
     border: none; /* Pas de bordure */
     color: #666; /* Gris moyen */
@@ -175,7 +175,7 @@ nav button.active {
 }
 
 /* Le bouton retour devient blanc au survol */
-.detail-header .back-btn:hover {
+.back-btn:hover {
     color: #fff;
 }
 

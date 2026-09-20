@@ -17,11 +17,13 @@
         <!-- Nom de la page actuelle (mis a jour par JavaScript) -->
         <span id="page-title" class="page-title">Accueil</span>
         <!-- Boutons des projets : chacun ouvre la page detaillee du projet correspondant -->
-        <button onclick="showProject(0)">Projet 1</button>
-        <button onclick="showProject(1)">Projet 2</button>
-        <button onclick="showProject(2)">Projet 3</button>
-        <!-- Bouton A propos : affiche la page de presentation personnelle -->
-        <button onclick="showAbout()">A propos de moi</button>
+        <div>
+            <button onclick="showProject(0)">Projet 1</button>
+            <button onclick="showProject(1)">Projet 2</button>
+            <button onclick="showProject(2)">Projet 3</button>
+            <!-- Bouton A propos : affiche la page de presentation personnelle -->
+            <button onclick="showAbout()">A propos de moi</button>
+        </div>
     </nav>
 
     <!-- Conteneur principal qui englobe tout le contenu de la page -->
@@ -141,6 +143,7 @@
         <!-- ==================== PAGE A PROPOS ==================== -->
         <!-- Section de presentation personnelle, cachee par defaut -->
         <div id="about" class="about-page">
+            <button class="back-btn" onclick="showHome()">&larr; Retour</button>
             <h1>A propos de moi</h1>
             <p>Je suis un createur passionne par le design et le developpement. Chaque projet est une opportunite d'apprendre et de repousser mes limites creatives.</p>
             <p>Mon approche combine esthetique et fonctionnalite. Je crois que beau et utile ne s'excluent pas, et je m'efforce de trouver cet equilibre dans chaque realisation.</p>
@@ -152,6 +155,7 @@
                 <a href="#">GitHub</a>
             </div>
         </div>
+        
     </div>
 
     <!-- Lien vers le fichier JavaScript externe pour la navigation -->
