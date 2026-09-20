@@ -22,10 +22,19 @@ nav {
     width: 83%;
     margin: 0 auto; /* Centre horizontalement */
     padding: 30px 0 20px; /* Espacement haut/bas */
-    display: flex; /* Alignement horizontal des boutons */
-    justify-content: center; /* Centre les boutons */
-    gap: 12px; /* Espacement entre chaque bouton */
-    flex-wrap: wrap; /* Les boutons passent a la ligne si pas assez de place */
+    display: flex; /* Alignement horizontal des elements */
+    justify-content: space-between; /* Titre a gauche, boutons a droite */
+    align-items: center; /* Centre verticalement */
+    gap: 12px; /* Espacement entre les elements */
+    flex-wrap: wrap; /* Les elements passent a la ligne si pas assez de place */
+}
+
+/* Titre de la page actuelle (a gauche de la nav) */
+.page-title {
+    color: #fff; /* Blanc pour bien ressortir */
+    font-size: 15px; /* Meme taille que les boutons */
+    font-weight: 600; /* Texte un peu gras */
+    letter-spacing: 0.5px; /* Leger espacement entre les lettres */
 }
 
 /* Style par defaut des boutons du menu */
@@ -33,7 +42,7 @@ nav button {
     background: transparent; /* Pas de fond */
     border: 1px solid #333; /* Bordure grise foncee */
     color: #aaa; /* Texte gris */
-    padding: 12px 28px; /* Espacement interne */
+    padding: 12px 50px; /* Espacement interne */
     font-size: 15px; /* Taille du texte */
     cursor: pointer; /* Curseur en forme de main au survol */
     border-radius: 6px; /* Coins arrondis */
@@ -60,7 +69,7 @@ nav button.active {
 .container {
     width: 83%;
     margin: 0 auto; /* Centre le contenu */
-    padding: 20px 0 60px; /* Espacement haut et bas */
+    padding: 80px 0 60px; /* Espacement haut et bas */
 }
 
 /* ==================== PAGE D'ACCUEIL : GRILLE DE PROJETS ==================== */

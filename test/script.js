@@ -5,14 +5,23 @@ const projects = [0, 1, 2];
 // Stocke la page actuellement affichee
 let currentView = 'home';
 
-// Met a jour l'apparence du bouton actif dans le menu
-// index : position du bouton a activer (0 = Accueil, 1-3 = Projets, 4 = A propos)
+// Noms des pages correspondant a chaque bouton du menu
+// Les boutons sont maintenant : Projet 1 (0), Projet 2 (1), Projet 3 (2), A propos (3)
+const pageNames = ['Projet 1', 'Projet 2', 'Projet 3', 'A propos de moi'];
+
+// Met a jour l'apparence du bouton actif dans le menu et le nom de la page
+// index : position du bouton a activer (0-2 = Projets, 3 = A propos)
 function setActiveNav(index) {
     // Parcourt tous les boutons du menu
     document.querySelectorAll('nav button').forEach((btn, i) => {
         // Ajoute la classe 'active' uniquement au bouton correspondant a l'index
         btn.classList.toggle('active', i === index);
     });
+}
+
+// Met a jour le texte du titre de la page (a gauche de la nav)
+function setPageTitle(title) {
+    document.getElementById('page-title').textContent = title;
 }
 
 // Cache toutes les sections avant d'en afficher une nouvelle
@@ -31,7 +40,11 @@ function hideAll() {
 function showHome() {
     hideAll(); // Cache tout d'abord
     document.getElementById('home').style.display = 'flex'; // Affiche la liste
-    setActiveNav(0); // Active le bouton "Accueil" dans le menu
+    // Aucun bouton actif car on est sur l'accueil
+    document.querySelectorAll('nav button').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    setPageTitle('Accueil'); // Met a jour le titre
     currentView = 'home';
 }
 
@@ -41,8 +54,8 @@ function showProject(index) {
     hideAll();
     // Ajoute 'active' a la div du projet pour l'afficher (display: block)
     document.getElementById('detail-' + index).classList.add('active');
-    // Active le bouton correspondant dans le menu (+1 car le bouton 0 est Accueil)
-    setActiveNav(index + 1);
+    setActiveNav(index); // Active le bouton correspondant
+    setPageTitle(pageNames[index]); // Met a jour le titre
     currentView = 'project-' + index;
 }
 
@@ -50,6 +63,7 @@ function showProject(index) {
 function showAbout() {
     hideAll();
     document.getElementById('about').classList.add('active');
-    setActiveNav(4); // 5e bouton du menu (index 4)
+    setActiveNav(3); // 4e bouton du menu (index 3)
+    setPageTitle(pageNames[3]); // Met a jour le titre
     currentView = 'about';
 }
