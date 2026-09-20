@@ -21,11 +21,15 @@ body {
 nav {
     width: 83%;
     margin: 0 auto; /* Centre horizontalement */
-    padding: 30px 0 20px; /* Espacement haut/bas */
+    padding: 40px 0 20px; /* Espacement haut/bas */
     display: flex; /* Alignement horizontal des elements */
     justify-content: space-between; /* Titre a gauche, boutons a droite */
     align-items: center; /* Centre verticalement */
-    flex-wrap: wrap; /* Les elements passent a la ligne si pas assez de place */
+}
+
+nav div {
+    display: flex;
+    gap: 12px;
 }
 
 /* Titre de la page actuelle (a gauche de la nav) */
@@ -39,7 +43,7 @@ nav {
 /* Style par defaut des boutons du menu */
 nav button {
     background: transparent; /* Pas de fond */
-    border: 1px solid #333; /* Bordure grise foncee */
+    border: 2px solid #333; /* Bordure grise foncee */
     color: #aaa; /* Texte gris */
     padding: 12px 50px; /* Espacement interne */
     font-size: 15px; /* Taille du texte */
