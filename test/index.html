@@ -1,165 +1,19 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- Encodage des caracteres speciaux (accents, etc.) -->
     <meta charset="UTF-8">
-    <!-- Adapte la mise en page a la taille de l'ecran (responsive) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Titre affiche dans l'onglet du navigateur -->
-    <title>Mon Portfolio</title>
-    <!-- Lien vers le fichier CSS externe pour les styles -->
+    <title>Porte Folio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- Barre de navigation avec le nom de la page a gauche et les boutons a droite -->
-    <nav>
-        <!-- Nom de la page actuelle (mis a jour par JavaScript) -->
-        <span id="page-title" class="page-title">Accueil</span>
-        <!-- Boutons des projets : chacun ouvre la page detaillee du projet correspondant -->
-        <div class="menu-button">
-            <button onclick="showProject(0)">Projet 1</button>
-            <button onclick="showProject(1)">Projet 2</button>
-            <button onclick="showProject(2)">Projet 3</button>
-            <!-- Bouton A propos : affiche la page de presentation personnelle -->
-            <button onclick="showAbout()">A propos de moi</button>
-        </div>
+    <h1 class="page-title">Aperçu</h1>
+    <nav class="menu-bar">
+        <button>Projet 1</button>
+        <button>Projet 2</button>
+        <button>projet 3</button>
+        <button>à propos de moi</button>
     </nav>
-
-    <!-- Conteneur principal qui englobe tout le contenu de la page -->
-    <div class="container">
-
-        <!-- ==================== PAGE D'ACCUEIL ==================== -->
-        <!-- Grille contenant les 3 cartes des projets (visible par defaut) -->
-        <div id="home" class="home-grid">
-
-            <!-- Carte du Projet 1 : cliquable pour ouvrir le detail -->
-            <div class="project-card" onclick="showProject(0)">
-                <!-- Zone image du projet (placeholder avec le numero) -->
-                <div class="card-image">01</div>
-                <!-- Zone texte : titre, description courte, et categorie -->
-                <div class="card-body">
-                    <h3>Projet 1</h3>
-                    <p>Description courte du premier projet. Un travail creatif et technique.</p>
-                    <!-- Etiquette de categorie -->
-                    <span class="card-tag">Design</span>
-                </div>
-            </div>
-
-            <!-- Carte du Projet 2 -->
-            <div class="project-card" onclick="showProject(1)">
-                <div class="card-image">02</div>
-                <div class="card-body">
-                    <h3>Projet 2</h3>
-                    <p>Description courte du deuxieme projet. Une realisation originale et soignee.</p>
-                    <span class="card-tag">Developpement</span>
-                </div>
-            </div>
-
-            <!-- Carte du Projet 3 -->
-            <div class="project-card" onclick="showProject(2)">
-                <div class="card-image">03</div>
-                <div class="card-body">
-                    <h3>Projet 3</h3>
-                    <p>Description courte du troisieme projet. Un projet complet et abouti.</p>
-                    <span class="card-tag">Branding</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- ==================== PAGES DETAIL DES PROJETS ==================== -->
-        <!-- Chaque projet a sa propre page de detail, cachee par defaut -->
-
-        <!-- Detail du Projet 1 -->
-        <div id="detail-0" class="project-detail">
-            <!-- En-tete avec bouton retour, titre et annee/categorie -->
-            <div class="detail-header">
-                <button class="back-btn" onclick="showHome()">&larr; Retour</button>
-                <h1>Projet 1</h1>
-                <div class="meta">2024 &mdash; Design</div>
-            </div>
-            <!-- Contenu en 2 colonnes : texte a gauche, image a droite -->
-            <div class="detail-content">
-                <div class="detail-text">
-                    <h2>Decouverte</h2>
-                    <p>Une exploration visuelle autour du design minimaliste. Ce projet m'a permis de repousser les limites de la simplicite tout en gardant un impact fort.</p>
-                    <p>Le objectif etait de creer une experience utilisateur fluide et intuitive, avec une attention particuliere aux details typographiques et a la mise en page.</p>
-                    <!-- Tags des technologies utiliseses -->
-                    <div class="tags">
-                        <span>UI Design</span>
-                        <span>Figma</span>
-                        <span>Prototypage</span>
-                    </div>
-                </div>
-                <!-- Image placeholder du projet -->
-                <div class="detail-image">01</div>
-            </div>
-        </div>
-
-        <!-- Detail du Projet 2 -->
-        <div id="detail-1" class="project-detail">
-            <div class="detail-header">
-                <button class="back-btn" onclick="showHome()">&larr; Retour</button>
-                <h1>Projet 2</h1>
-                <div class="meta">2024 &mdash; Developpement</div>
-            </div>
-            <div class="detail-content">
-                <div class="detail-text">
-                    <h2>Decouverte</h2>
-                    <p>Un projet de developpement web complet, de la conception a la mise en production. L'accent a ete mis sur les performances et l'accessibilite.</p>
-                    <p>Les technologies utilisees permettent une experience rapide et responsive sur tous les appareils.</p>
-                    <div class="tags">
-                        <span>HTML/CSS</span>
-                        <span>JavaScript</span>
-                        <span>Responsive</span>
-                    </div>
-                </div>
-                <div class="detail-image">02</div>
-            </div>
-        </div>
-
-        <!-- Detail du Projet 3 -->
-        <div id="detail-2" class="project-detail">
-            <div class="detail-header">
-                <button class="back-btn" onclick="showHome()">&larr; Retour</button>
-                <h1>Projet 3</h1>
-                <div class="meta">2024 &mdash; Branding</div>
-            </div>
-            <div class="detail-content">
-                <div class="detail-text">
-                    <h2>Decouverte</h2>
-                    <p>Creation d'une identite visuelle complete pour une marque. Du logo aux supports de communication, en passant par la charte graphique.</p>
-                    <p>Ce projet represente une demarche globale ou chaque element visuel raconte une histoire et sert une vision commune.</p>
-                    <div class="tags">
-                        <span>Logo</span>
-                        <span>Charte graphique</span>
-                        <span>Print</span>
-                    </div>
-                </div>
-                <div class="detail-image">03</div>
-            </div>
-        </div>
-
-        <!-- ==================== PAGE A PROPOS ==================== -->
-        <!-- Section de presentation personnelle, cachee par defaut -->
-        <div id="about" class="about-page">
-            <button class="back-btn" onclick="showHome()">&larr; Retour</button>
-            <h1>A propos de moi</h1>
-            <p>Je suis un createur passionne par le design et le developpement. Chaque projet est une opportunite d'apprendre et de repousser mes limites creatives.</p>
-            <p>Mon approche combine esthetique et fonctionnalite. Je crois que beau et utile ne s'excluent pas, et je m'efforce de trouver cet equilibre dans chaque realisation.</p>
-            <p>Vous retrouverez sur cette page l'ensemble de mes projets recents. N'hesitez pas a me contacter pour toute collaboration ou question.</p>
-            <!-- Liens de contact -->
-            <div class="contact-links">
-                <a href="#">Email</a>
-                <a href="#">LinkedIn</a>
-                <a href="#">GitHub</a>
-            </div>
-        </div>
-        
-    </div>
-
-    <!-- Lien vers le fichier JavaScript externe pour la navigation -->
-    <script src="script.js"></script>
 
 </body>
 </html>

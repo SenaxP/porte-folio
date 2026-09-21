@@ -1,0 +1,325 @@
+/* ==================== RESET GLOBAL ==================== */
+/* Supprime les marges et paddings par defaut de tous les elements */
+/* box-sizing: border-box fait que la largeur inclut padding + bordure */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==================== STYLES GENERAUX ==================== */
+/* Style de base pour la page entiere */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Police lisible et moderne */
+    background: #0a0a0a; /* Fond presque noir */
+    color: #e0e0e0; /* Texte gris clair */
+    min-height: 100vh; /* Occupe au moins toute la hauteur de l'ecran */
+}
+
+/* ==================== BARRE DE NAVIGATION ==================== */
+/* Conteneur du menu : 83% de largeur, centre, avec espacement entre les boutons */
+nav {
+    width: 83%;
+    margin: 0 auto; /* Centre horizontalement */
+    padding: 40px 0 20px; /* Espacement haut/bas */
+    display: flex; /* Alignement horizontal des elements */
+    justify-content: space-between; /* Titre a gauche, boutons a droite */
+    align-items: center; /* Centre verticalement */
+}
+
+nav div {
+    display: flex;
+    gap: 12px;
+}
+
+/* Titre de la page actuelle (a gauche de la nav) */
+.page-title {
+    color: #fff; /* Blanc pour bien ressortir */
+    font-size: 30px; /* Meme taille que les boutons */
+    font-weight: 600; /* Texte un peu gras */
+    letter-spacing: 0.5px; /* Leger espacement entre les lettres */
+}
+
+/* Style par defaut des boutons du menu */
+nav button {
+    background: transparent; /* Pas de fond */
+    border: 2px solid #333; /* Bordure grise foncee */
+    color: #aaa; /* Texte gris */
+    padding: 12px 50px; /* Espacement interne */
+    font-size: 15px; /* Taille du texte */
+    cursor: pointer; /* Curseur en forme de main au survol */
+    border-radius: 6px; /* Coins arrondis */
+    transition: all 0.3s ease; /* Animation fluide sur les changements */
+    letter-spacing: 0.5px; /* Leger espacement entre les lettres */
+}
+
+/* Effet au survol des boutons */
+nav button:hover {
+    border-color: #fff; /* Bordure blanche */
+    color: #fff; /* Texte blanc */
+}
+
+/* Style du bouton actif (page en cours) */
+nav button.active {
+    background: #fff; /* Fond blanc */
+    color: #0a0a0a; /* Texte noir */
+    border-color: #fff; /* Bordure blanche */
+    font-weight: 600; /* Texte plus gras */
+}
+
+/* ==================== CONTENEUR PRINCIPAL ==================== */
+/* Zone de contenu en dessous du menu */
+.container {
+    width: 83%;
+    margin: 0 auto; /* Centre le contenu */
+    padding: 80px 0 60px; /* Espacement haut et bas */
+}
+
+/* ==================== PAGE D'ACCUEIL : GRILLE DE PROJETS ==================== */
+/* Les 3 cartes empilees verticalement */
+.home-grid {
+    display: flex;
+    flex-direction: column; /* Empile les cartes de haut en bas */
+    gap: 20px; /* Espacement entre les cartes */
+}
+
+/* Carte d'un projet (visible sur la page d'accueil) */
+.project-card {
+    min-height: 220px;
+    background: #111; /* Fond tres sombre */
+    border: 1px solid #1a1a1a; /* Bordure discrete */
+    border-radius: 12px; /* Coins arrondis */
+    overflow: hidden; /* Masque ce qui depasse (coins de l'image) */
+    cursor: pointer; /* Curseur en main cliquable */
+    transition: all 0.3s ease; /* Animation fluide au survol */
+    display: flex; /* Contenu en ligne (image + texte cote a cote) */
+    align-items: stretch; /* Prend toute la hauteur */
+}
+
+/* Effet au survol de la carte */
+.project-card:hover {
+    border-color: #333; /* Bordure plus visible */
+    transform: translateY(-4px); /* Deplacement vers le haut de 4px */
+}
+
+/* Zone image du projet (a gauche) */
+.card-image {
+    width: 300px; /* Largeur fixe pour l'image */
+    min-height: 160px; /* Hauteur minimum */
+    background: #1a1a1a; /* Fond gris tres sombre */
+    display: flex;
+    align-items: center; /* Centre verticalement */
+    justify-content: center; /* Centre horizontalement */
+    font-size: 48px; /* Grand numero au centre */
+    color: #333; /* Couleur du numero */
+    flex-shrink: 0; /* L'image ne reduit pas */
+}
+
+/* Zone texte a droite de l'image */
+.card-body {
+    padding: 24px 28px; /* Espacement interne plus generieux */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centre le texte verticalement */
+    flex: 1; /* Prend tout l'espace restant */
+}
+
+/* Titre du projet dans la carte */
+.card-body h3 {
+    color: #fff; /* Blanc pour bien ressortir */
+    font-size: 18px;
+    margin-bottom: 8px; /* Espace sous le titre */
+}
+
+/* Description courte du projet */
+.card-body p {
+    color: #777; /* Gris moyen */
+    font-size: 14px;
+    line-height: 1.6; /* Interligne comfortable */
+}
+
+/* Etiquette de categorie (ex: "Design", "Developpement") */
+.card-tag {
+    display: inline-block; /* Permet margin-top de fonctionner */
+    margin-top: 12px;
+    padding: 4px 10px;
+    background: #1a1a1a; /* Fond sombre */
+    border-radius: 20px; /* Forme de pilule */
+    font-size: 12px;
+    color: #888; /* Gris clair */
+    align-self: flex-start; /* Colle le tag a gauche */
+}
+
+/* ==================== PAGE DETAIL D'UN PROJET ==================== */
+/* Par defaut cachee (display: none) */
+.project-detail {
+    display: none;
+}
+
+/* Quand la classe 'active' est ajoutee, la page s'affiche */
+.project-detail.active {
+    display: block;
+}
+
+/* En-tete du projet detail (titre, annee, bouton retour) */
+.detail-header {
+    margin-bottom: 40px; /* Espace avant le contenu */
+}
+
+/* Bouton "Retour" en haut des pages detail */
+.back-btn {
+    background: none; /* Pas de fond */
+    border: none; /* Pas de bordure */
+    color: #666; /* Gris moyen */
+    font-size: 14px;
+    cursor: pointer; /* Curseur en main */
+    margin-bottom: 20px; /* Espace avant le titre */
+    display: inline-block;
+    transition: color 0.2s; /* Changement de couleur fluide */
+}
+
+/* Le bouton retour devient blanc au survol */
+.back-btn:hover {
+    color: #fff;
+}
+
+/* Titre du projet dans la page detail */
+.detail-header h1 {
+    font-size: 36px; /* Grand titre */
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+/* Sous-titre avec l'annee et la categorie */
+.detail-header .meta {
+    color: #555; /* Gris fonce */
+    font-size: 14px;
+}
+
+/* Contenu detail en 2 colonnes : texte a gauche, image a droite */
+.detail-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 colonnes egales */
+    gap: 40px; /* Espacement entre les colonnes */
+}
+
+/* Sous-titre dans la description du projet */
+.detail-text h2 {
+    color: #ccc; /* Gris clair */
+    font-size: 20px;
+    margin-bottom: 16px;
+    font-weight: 500; /* Graisse moyenne */
+}
+
+/* Paragraphes de la description detaillee */
+.detail-text p {
+    color: #777;
+    line-height: 1.8; /* Interligne aere pour la lecture */
+    font-size: 15px;
+    margin-bottom: 16px;
+}
+
+/* Conteneur des tags/technologies utiliseses */
+.detail-text .tags {
+    display: flex;
+    gap: 8px; /* Espacement entre les tags */
+    flex-wrap: wrap; /* Les tags passent a la ligne si necessaire */
+    margin-top: 20px;
+}
+
+/* Style d'un tag individuel */
+.detail-text .tags span {
+    padding: 6px 14px;
+    background: #1a1a1a; /* Fond sombre */
+    border-radius: 20px; /* Forme de pilule */
+    font-size: 13px;
+    color: #888;
+}
+
+/* Zone image du projet dans la page detail */
+.detail-image {
+    background: #111;
+    border: 1px solid #1a1a1a;
+    border-radius: 12px;
+    height: 350px; /* Hauteur fixe pour l'image placeholder */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 72px; /* Grand numero au centre */
+    color: #222; /* Couleur tres discree */
+}
+
+/* ==================== PAGE A PROPOS ==================== */
+/* Par defaut cachee, limitee a 700px de largeur pour une lecture confortable */
+.about-page {
+    display: none;
+    max-width: 700px;
+}
+
+/* S'affiche quand la classe 'active' est ajoutee */
+.about-page.active {
+    display: block;
+}
+
+/* Titre de la page A propos */
+.about-page h1 {
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 24px;
+}
+
+/* Paragraphes de presentation */
+.about-page p {
+    color: #777;
+    line-height: 1.8; /* Interligne aere */
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+/* Conteneur des liens de contact (Email, LinkedIn, GitHub) */
+.about-page .contact-links {
+    margin-top: 32px;
+    display: flex;
+    gap: 16px; /* Espacement entre les liens */
+}
+
+/* Style de chaque lien de contact */
+.about-page .contact-links a {
+    color: #555; /* Gris fonce par defaut */
+    text-decoration: none; /* Pas de soulignement */
+    padding: 10px 20px;
+    border: 1px solid #222; /* Bordure tres discree */
+    border-radius: 8px; /* Coins legerement arrondis */
+    font-size: 14px;
+    transition: all 0.2s; /* Animation fluide */
+}
+
+/* Effet au survol des liens de contact */
+.about-page .contact-links a:hover {
+    color: #fff; /* Devient blanc */
+    border-color: #555; /* Bordure plus visible */
+}
+
+/* ==================== ADAPTATION AUX PETITS ECRANS (RESPONSIVE) ==================== */
+/* Applique ces regles quand l'ecran fait 768px ou moins (tablette/telephone) */
+@media (max-width: 768px) {
+    /* Elargit le menu et le conteneur a 92% sur mobile */
+    nav, .container {
+        width: 92%;
+    }
+    /* Les cartes passent en mode colonne (image au-dessus du texte) */
+    .home-grid {
+        flex-direction: column;
+    }
+    .project-card {
+        flex-direction: column;
+    }
+    .card-image {
+        width: 100%;
+        min-height: 140px;
+    }
+    /* Le contenu detail passe egalement a 1 seule colonne */
+    .detail-content {
+        grid-template-columns: 1fr;
+    }
+}
