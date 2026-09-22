@@ -6,8 +6,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #0a0a0a;
-    color: #e0e0e0;
+    background: #ffffff;
     min-height: 100vh;
 }
 
@@ -26,18 +25,18 @@ nav div {
 }
 
 .page-title {
-    color: #fff;
+    color: #000000;
     font-size: 30px;
     font-weight: 600;
     letter-spacing: 0.5px;
 }
 
 nav button {
-    background: transparent;
+    background: #ffffff;
     border: 2px solid #333;
-    color: #aaa;
+    color: #000000;
     padding: 12px 50px;
-    font-size: 15px;
+    font-size: 18px;
     cursor: pointer;
     border-radius: 6px;
     transition: all 0.3s ease;
@@ -45,13 +44,14 @@ nav button {
 }
 
 nav button:hover {
-    border-color: #fff;
-    color: #fff;
+    border-color: #ffffff;
+    color: #ffffff;
+    background: #646464;
 }
 
 nav button.active {
-    background: #fff;
-    color: #0a0a0a;
+    background: #646464;
+    color: #ffffff;
     border-color: #fff;
     font-weight: 600;
 }
@@ -70,8 +70,8 @@ nav button.active {
 
 .project-card {
     min-height: 220px;
-    background: #111;
-    border: 4px solid #1a1a1a;
+    background: #eeeeee;
+    border: 3px solid #646464;
     border-radius: 12px;
     overflow: hidden;
     cursor: pointer;
@@ -81,14 +81,13 @@ nav button.active {
 }
 
 .project-card:hover {
-    border-color: #333;
     transform: translateY(-4px);
 }
 
 .card-image {
     width: 300px;
     min-height: 160px;
-    background: #1a1a1a;
+    background: #111;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -106,7 +105,7 @@ nav button.active {
 }
 
 .card-body h3 {
-    color: #fff;
+    color: #000000;
     font-size: 18px;
     margin-bottom: 8px;
 }
@@ -121,7 +120,7 @@ nav button.active {
     display: inline-block;
     margin-top: 12px;
     padding: 4px 10px;
-    background: #1a1a1a;
+    background: #ffffff;
     border-radius: 20px;
     font-size: 12px;
     color: #888;
@@ -141,23 +140,26 @@ nav button.active {
 }
 
 .back-btn {
-    background: none;
+    padding: 4px 20px;
+    background: #ffffff;
     border: none;
     color: #666;
     font-size: 14px;
     cursor: pointer;
     margin-bottom: 20px;
     display: inline-block;
-    transition: color 0.2s;
+    transition: all 0.2s ease;
+    border-radius: 20px;
 }
 
 .back-btn:hover {
-    color: #fff;
+    background: #909090;
+    color: #ffffff;
 }
 
 .detail-header h1 {
     font-size: 36px;
-    color: #fff;
+    color: #000000;
     margin-bottom: 12px;
 }
 
@@ -190,20 +192,21 @@ nav button.active {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
-    margin-top: 20px;
+    margin-top: 60px;
 }
 
 .detail-text .tags span {
+    margin-top: 20px;
     padding: 6px 14px;
-    background: #1a1a1a;
+    background: #909090;
     border-radius: 20px;
     font-size: 13px;
-    color: #888;
+    color: #fdfdfd;
 }
 
 .detail-image {
     background: #111;
-    border: 1px solid #1a1a1a;
+    border: 3px solid #646464;
     border-radius: 12px;
     height: 350px;
     display: flex;
