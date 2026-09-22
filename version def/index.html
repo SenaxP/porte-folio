@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav>
+    <nav> <!-- menu en haut -->
         <span id="page-title" class="page-title">Accueil</span>
         <div class="menu-button">
             <button onclick="showProject(0)">Projet 1</button>
@@ -18,6 +18,8 @@
         </div>
     </nav>
 
+
+
     <div class="container-page"> <!-- contient les pages des sites et en affiche 1 a la fois avec le js -->
 
         <div id="home" class="home-grid"> <!-- contient les 3 onglet projet -->
@@ -26,7 +28,7 @@
                 <div class="card-image">1</div>
                 <div class="card-body">
                     <h3>Projet 1</h3>
-                    <p>Description</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec</p>
                     <span class="card-tag">truc</span>
                 </div>
             </div>
@@ -35,7 +37,7 @@
                 <div class="card-image">2</div>
                 <div class="card-body">
                     <h3>Projet 2</h3>
-                    <p>Description</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.</p>
                     <span class="card-tag">truc</span>
                 </div>
             </div>
@@ -44,13 +46,15 @@
                 <div class="card-image">3</div>
                 <div class="card-body">
                     <h3>Projet 3</h3>
-                    <p>Description</p>
+                    <p>Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere.</p>
                     <span class="card-tag">truc</span>
                 </div>
             </div>
         </div>
 
-        <div id="detail-0" class="project-detail">
+
+
+        <div id="detail-0" class="project-detail"> <!-- les page -->
             <div class="detail-header">
                 <button class="back-btn" onclick="showHome()">&larr; Retour</button>
                 <h1>Projet 1</h1>
@@ -58,8 +62,8 @@
             <div class="detail-content">
                 <div class="detail-text">
                     <h2>titre</h2>
-                    <p>blablabla</p>
-                    <p>blablabla</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque<br>faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi<br>pretium tellus duis convallis. Tempus leo eu aenean sed diam urna<br>tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas.<br>Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit<br>semper vel class aptent taciti sociosqu. Ad litora torquent per conubia<br>nostra inceptos himenaeos.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien<br>vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis.<br>Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec<br>metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere.<br>Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia<br>nostra inceptos himenaeos.</p>
                     <div class="tags">
                         <span>truc</span>
                     </div>
@@ -76,8 +80,8 @@
             <div class="detail-content">
                 <div class="detail-text">
                     <h2>titre</h2>
-                    <p>blablabla</p>
-                    <p>blablabla</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque<br>faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi<br>pretium tellus duis convallis. Tempus leo eu aenean sed diam urna<br>tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas.<br>Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit<br>semper vel class aptent taciti sociosqu. Ad litora torquent per conubia<br>nostra inceptos himenaeos.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien<br>vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis.<br>Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec<br>metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere.<br>Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia<br>nostra inceptos himenaeos.</p>
                     <div class="tags">
                         <span>truc</span>
                     </div>
@@ -94,8 +98,8 @@
             <div class="detail-content">
                 <div class="detail-text">
                     <h2>titre</h2>
-                    <p>blablabla</p>
-                    <p>blablabla</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque<br>faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi<br>pretium tellus duis convallis. Tempus leo eu aenean sed diam urna<br>tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas.<br>Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit<br>semper vel class aptent taciti sociosqu. Ad litora torquent per conubia<br>nostra inceptos himenaeos.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien<br>vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis.<br>Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec<br>metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere.<br>Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia<br>nostra inceptos himenaeos.</p>
                     <div class="tags">
                         <span>truc</span>
                     </div>
